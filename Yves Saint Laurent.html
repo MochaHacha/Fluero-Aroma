@@ -69,16 +69,11 @@
     .icons i:hover {
       transform: scale(1.1);
     }
-     header .icons:last-child {
-    margin-right: -45px; /* сдвиг иконок ближе к правому краю */
-    } 
+    
     #cart-icon {
      position: relative;
     margin-right: 25px; /* небольшое расстояние между корзиной и лупой */
     }
-    header .icons:first-child {
-    margin-left: -42px; /* отступ от левого края */
-   }
 
     /* Продукты каталога */
     .products {
@@ -339,6 +334,31 @@
       background-color: rgba(0, 0, 0, 0.05);
       transform: translateX(5px);
     }
+    @media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  header .icons:first-child,
+  header .icons:last-child {
+    margin: 0;
+  }
+
+  .icons {
+    gap: 12px;
+  }
+
+  .icons i {
+    font-size: 1.2rem;
+  }
+}
+
 
 
 
@@ -467,6 +487,7 @@
 </script>
 </body>
 </html>
+
 
 
 
