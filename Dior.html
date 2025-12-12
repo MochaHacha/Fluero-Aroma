@@ -263,7 +263,58 @@
   background-color: #333;
   transform: scale(1.05);
 }
+ .side-menu {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      z-index: 1500;
+      padding-top: 100px;
+    }
 
+    .side-menu.active {
+      left: 0;
+    }
+
+    .side-menu .menu-title {
+      position: absolute;
+      top: 25px;
+      left: 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #333;
+      text-transform: uppercase;
+    }
+
+    .side-menu .close-btn {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      color: #333;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .side-menu a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 15px 30px;
+      transition: 0.3s;
+      letter-spacing: 0.5px;
+    }
+
+    .side-menu a:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      transform: translateX(5px);
+    }
 
   </style>
 </head>
@@ -365,6 +416,16 @@
       <button class="add-btn" data-name="Dior Joy" data-price="10200">Добавить в корзину</button>
     </div>
   </section>
+  
+  <nav class="side-menu" id="sideMenu">
+    <span class="menu-title">Fluère</span>
+    <i class="fa-solid fa-xmark close-btn" id="closeMenu"></i>
+    <a href="index.html">Главная</a>
+    <a href="login.html">Вход</a>
+    <a href="map.html">Карта</a>
+    <a href="shop.html">Каталог</a>
+    <a href="index.html">О нас</a>
+  </nav>
 
   <!-- Добавление окна корзины(модалка корзины) -->
   <div class="cart-modal" id="cart-modal">
@@ -382,3 +443,4 @@
   <script src="cartData.js"></script>
 </body>
 </html>
+
