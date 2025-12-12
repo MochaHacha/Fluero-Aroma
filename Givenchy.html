@@ -418,7 +418,37 @@
 </div>
 
   <!-- Подключаем код из js -->
-  <script src="cartData.js"></script>
+    <script>
+    
+    const menuIcon = document.querySelector('.fa-bars'); 
+    const sideMenu = document.getElementById('sideMenu'); 
+    const closeMenuBtn = document.getElementById('closeMenu'); 
+
+    
+    if (menuIcon && sideMenu) {
+        menuIcon.addEventListener('click', () => {
+            sideMenu.classList.add('active'); 
+        });
+    }
+
+    
+    if (closeMenuBtn && sideMenu) {
+        closeMenuBtn.addEventListener('click', () => {
+            sideMenu.classList.remove('active'); 
+        });
+    }
+
+   
+    const menuLinks = sideMenu ? sideMenu.querySelectorAll('a') : [];
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+        });
+    });
+
+</script>
+ 
 </body>
 </html>
+
 
